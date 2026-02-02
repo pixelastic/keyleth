@@ -1,0 +1,24 @@
+# Important files that should not be committed
+.envrc
+
+# Build directories
+build/
+dist/
+tmp/
+
+# Junk files
+.DS_Store
+Thumbs.db
+lerna-debug.log
+npm-debug.log
+yarn-error.log
+*~
+
+# Tool directories
+.claude/
+.cursor/
+.netlify/
+.taskmaster/
+.turbo/
+.yarn/
+node_modules/
