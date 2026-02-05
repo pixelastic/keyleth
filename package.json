@@ -1,11 +1,37 @@
 {
-  "name": "keyleth",
-  "version": "0.0.1",
+  "name": "keyleth-root",
+  "private": true,
   "type": "module",
+  "workspaces": [
+    "docs",
+    "lib"
+  ],
+  "description": "keyleth root workspace",
+  "author": "pixelastic",
+  "homepage": "https://projects.pixelastic.com/keyleth",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelastic/keyleth"
+  },
   "license": "MIT",
-  "main": "index.js",
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "packageManager": "yarn@4.12.0",
   "devDependencies": {
     "aberlaas": "2.22.2"
+  },
+  "scripts": {
+    "build": "./scripts/build",
+    "build:prod": "./scripts/build-prod",
+    "ci": "./scripts/ci",
+    "cms": "./scripts/cms",
+    "compress": "./scripts/compress",
+    "lint": "./scripts/lint",
+    "lint:fix": "./scripts/lint-fix",
+    "release": "./scripts/release",
+    "serve": "./scripts/serve",
+    "test": "./scripts/test",
+    "test:watch": "./scripts/test-watch"
   }
 }

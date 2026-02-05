@@ -1,0 +1,31 @@
+{
+  "name": "keyleth-docs",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "description": "keyleth docs",
+  "author": "pixelastic",
+  "homepage": "https://projects.pixelastic.com/keyleth",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelastic/keyleth"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "norska": "2.9.0",
+    "norska-theme-docs": "5.0.3"
+  },
+  "scripts": {
+    "build": "cd .. && ./scripts/build",
+    "build:prod": "cd .. && ./scripts/build-prod",
+    "ci": "cd .. && ./scripts/ci",
+    "cms": "cd .. && ./scripts/cms",
+    "compress": "cd .. && ./scripts/compress",
+    "lint": "cd .. && ./scripts/lint",
+    "lint:fix": "cd .. && ./scripts/lint-fix",
+    "release": "cd .. && ./scripts/release",
+    "serve": "cd .. && ./scripts/serve",
+    "test": "cd .. && ./scripts/test",
+    "test:watch": "cd .. && ./scripts/test-watch"
+  }
+}
