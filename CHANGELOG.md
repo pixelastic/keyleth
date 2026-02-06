@@ -1,3 +1,7 @@
+## v0.2.0
+
+This is a release fix, as the first one didn't work correctly.
+
 ## v0.1.0
 
 
