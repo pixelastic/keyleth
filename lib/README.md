@@ -23,6 +23,10 @@ import { getKey, setKey } from 'keyleth';
 const token = await getKey('NPM_TOKEN');
 // Returns the value, or null if file/key doesn't exist
 
+// Use a fallback value if key doesn't exist
+const apiUrl = await getKey('API_URL', 'https://api.example.com');
+// Returns the value from .env, or the fallback if not found
+
 // Write or update a key in .env file
 await setKey('NPM_TOKEN', 'npm_abc123xyz');
 // Creates the file if needed, updates the key if it exists
@@ -30,15 +34,20 @@ await setKey('NPM_TOKEN', 'npm_abc123xyz');
 // Use a custom directory
 await getKey('API_KEY', { cwd: '/path/to/directory' });
 await setKey('API_KEY', 'secret', { cwd: '/path/to/directory' });
+
+// Combine fallback with custom directory
+await getKey('API_KEY', 'default-key', { cwd: '/path/to/directory' });
 ```
 
 By default, keyleth looks for `.env` in your git repository root. Use the `cwd` option to specify a different directory.
 
 ### API
 
-**`getKey(key, options)`**
-- Returns the value for the specified key, or `null` if not found
-- Options: `{ cwd: string }` - Directory containing the `.env` file
+**`getKey(key, fallback?, options?)`**
+- Returns the value for the specified key, or the fallback value if not found, or `null`
+- `fallback` (optional): A string value to return if the key is not found
+- `options` (optional): `{ cwd: string }` - Directory containing the `.env` file
+- You can pass `options` as the second parameter if you don't need a fallback
 
 **`setKey(key, value, options)`**
 - Creates or updates a key in the `.env` file
